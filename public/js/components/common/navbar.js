@@ -1,6 +1,6 @@
 let navbar = {
     templateUrl: 'js/components/common/navbar.html',
-    controller: ['UsersService', '$state', function(UsersService, $state) {
+    controller: ['UsersService', '$state', '$interval', function (UsersService, $state, $interval) {
         'use strict'
         angular.extend(this, {
             $onInit() {
@@ -9,6 +9,18 @@ let navbar = {
                 }).catch((err) => {
 
                 })
+
+                this.updateTime = () => {
+                    this.clock = moment().toDate();
+                };
+                $interval(this.updateTime, 1000);
+
+
+
+
+
+
+
             },
             disconnect() {
                 UsersService.disconnect().then(() => {
