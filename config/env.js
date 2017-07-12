@@ -1,12 +1,12 @@
 module.exports = {
     "development": {
-        db: process.env.MONGODB_URI ||  require('./dev').db,
+        db: process.env.MONGODB_URI || 'mongodb://localhost:27017/blog' ,
         secretToken: process.env.SECRET_TOKEN || 'secretToken',
         env: 'development',
         facebookAuth: {
-            clientID: process.env.FACEBOOK_ID || require('./dev').facebookAuth.clientID, // your App ID
-            clientSecret: process.env.FACEBOOK_SECRET || require('./dev').facebookAuth.clientSecret, // your App Secret
-            callbackURL: process.env.FACEBOOK_CALLBACK || require('./dev').facebookAuth.callbackURL
+            clientID: process.env.FACEBOOK_ID || '1', // your App ID
+            clientSecret: process.env.FACEBOOK_SECRET || '1', // your App Secret
+            callbackURL: process.env.FACEBOOK_CALLBACK 
         }
     },
     "production": {
