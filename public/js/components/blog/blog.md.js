@@ -8,10 +8,12 @@ import blogItem from './blogItem/blogItem'
 import blogItemMenu from './blogItem/blogItemMenu'
 import blogList from './blogList/blogList'
 
+
 let blogModule = angular.module('app.blog', [])
     .component('blogItem', blogItem)
     .component('blogItemMenu', blogItemMenu)
     .component('blogList', blogList)
+   
     .config(['$stateProvider', ($stateProvider, $urlRouterProvider, $locationProvider) => {
         /*
           Define a state with name 'blog' this state is abstract and url is empty (root of application)
@@ -23,6 +25,8 @@ let blogModule = angular.module('app.blog', [])
                 abstract: true,
                 templateUrl: 'js/components/blog/blog.html'
             })
+
+
             .state('blog.list', {
                 url: '/',
                 template: '<blog-list></blog-list>'
@@ -31,6 +35,8 @@ let blogModule = angular.module('app.blog', [])
                 url: '/:id',
                 template: '<blog-item editable="true"></blog-item>'
             })
+
+            
     }])
     .name
 
